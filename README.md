@@ -1,9 +1,9 @@
 # Mini-Exploits-Playground
----
+
 This repository contains some vulnerable contracts.
 
 # Getting Start
----
+
 
 ## QuickStart
 ```
@@ -19,7 +19,7 @@ forge test
 ```
 
 # Disclaimer
----
+
 All code, practices, and patterns in this repository are used for educational purposes only.
 
 !!! DO NOT USE IN PRODUCTION !!!

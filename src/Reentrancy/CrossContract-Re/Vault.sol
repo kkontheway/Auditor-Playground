@@ -51,6 +51,9 @@ contract Vault is ERC20, ReentrancyGuard {
         path[1] = address(baseToken);
         // Approve token for swapping
         _srcToken.approve(address(router), _amount);
+
+        // @audit-issue The balance will be increased after swapping,but totalsupply not increase
+
         router.swapExactTokensForTokens(_amount, amountOutMin, path, address(this), block.timestamp);
         // Reset token approval
         _srcToken.approve(address(router), 0);
