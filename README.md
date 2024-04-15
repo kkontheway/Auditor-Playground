@@ -41,6 +41,7 @@ forge test --mt test_functionName
 | Proxy Attack            |                           |               |        |
 | msg.value in a Loop     |                           |               |        |
 | Flashloan Attack        |                           |               |        |
+| DDOS                    | uint-to-enum              |               | ✅      |
 
 
 
