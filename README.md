@@ -11,10 +11,10 @@
     <img src="https://raw.githubusercontent.com/kkontheway/IMG/main/202404191806005.png" alt="Logo" width="200" height="200">
   </a>
 
-  <h3 align="center">Mini-Exploits-Playground</h3>
+  <h3 align="center">Auditor-Playground</h3>
 
   <p align="center">
-    An playground For Mini Exploits in Web3Sec
+    An playground For Auditor.
   </p>
 </div>
 
