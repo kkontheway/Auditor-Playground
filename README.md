@@ -4,28 +4,32 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://raw.githubusercontent.com/kkontheway/IMG/main/202404191806005.png">
+    <img src="https://raw.githubusercontent.com/kkontheway/IMG/main/202404191806005.png" alt="Logo" width="200" height="200">
+  </a>
 
-# Mini-Exploits-Playground
+  <h3 align="center">Mini-Exploits-Playground</h3>
 
-Mini solidity Exploits example for learning.
+  <p align="center">
+    An playground For Mini Exploits in Web3Sec
+  </p>
+</div>
+
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#Requirement">Requirement</a></li>
+        <li><a href="#QuickStart">QuickStart</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#Test">Test</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -56,28 +60,38 @@ forge test
 ```
 forge test --mt test_functionName
 ```
-## Todo
-| Exploit                 | category                       | CTF-Practices | Status |
-| ----------------------- | ------------------------------ | ------------- | ------ |
-| Reentrancy              | Normal Reentrancy              |               |        |
-|                         | ReadOnly Reentrancy            |               |        |
-|                         | Cross Function Reentrancy      |               |        |
-|                         | Cross-Contract Reentrancy      |               |        |
-|                         | Cross-Chain Reentrancy         |               |        |
-| Signature Reply         |                                |               |        |
-| Over/Under Flow         |                                |               |        |
-| Oracle Manipulation     |                                |               |        |
-| DOS                     |                                |               |        |
-| Weak Randomness         |                                |               |        |
-| Missing Access Controls |                                |               |        |
-| Proxy Attack            |                                |               |        |
-| msg.value in a Loop     |                                |               |        |
-| Flashloan Attack        |                                |               |        |
-| DDOS                    | uint-to-enum                   |               | ✅      |
-| Precision Loss          | Division Before Multiplication |               |        |
+## Roadmap
+
+- [ ] Reentrancy
+  - [ ] Normal Reentrancy
+  - [ ] Readonly Reentrancy
+  - [ ] Cross Function Reentrancy
+  - [ ] Cross Function Reentrancy
+  - [ ] Cross Chain Reentrancy
+- [ ] Signature Reply
+- [ ] Over/Under Flow
+- [ ] Oracle Manipulation
+- [ ] Multi-language Support
+- [ ] DDOS
+  - [ ] uint-to-enum
+- [ ] Weak Randomness
+- [ ] Missing Access Control
+- [ ] Proxy Attack
+- [ ] msg.value in a Loop
+- [ ] Flashloan Attack
+- [ ] Precision Loss
+  - [ ] Division Before Multiplication
 
 
 
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. 
+
+Don't forget to give the project a star! Thanks again!
 # Disclaimer
 
 All code, practices, and patterns in this repository are used for educational purposes only.
