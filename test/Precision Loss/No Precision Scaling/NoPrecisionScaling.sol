@@ -42,7 +42,7 @@ contract NoPrecisionScaling is Test {
         // primaryBalance & secondaryAmountInPrimary may not be denominated in
         // the same precision => they can't safely be added together without
         // first scaling the secondary token to match the primary token's precision
-        // primaryAmount = 5e19 + 5e7 = 
+        // primaryAmount = 5e19 + 5e7 =
         primaryAmount = (primaryBalance + secondaryAmountInPrimary) * token1Precision / lpPoolTokensPrecision;
         console.log("primaryAmount            : ", primaryAmount);
     }

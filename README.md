@@ -80,7 +80,12 @@ forge test --mt test_functionName
 - [ ] msg.value in a Loop
 - [ ] Flashloan Attack
 - [ ] Precision Loss
-  - [ ] Division Before Multiplication
+  - [x] Division Before Multiplication
+  - [x] Rounding Down To Zero
+  - [x] Excessive Precision Scaling
+  - [ ] Rounding Leaks Value Form Protocol
+  - [x] No Precision Scaling
+  - [ ] Mis matched Precision Scaling
 
 
 
