@@ -5,7 +5,7 @@ pragma solidity ^0.8.12;
 import "../../../lib/openzeppelin-contracts/contracts/utils/math/Math.sol";
 import "forge-std/Test.sol";
 
-contract DivisionBeforeMultiplication {
+contract DivisionBeforeMultiplicationTest is Test {
     // source: https://code4rena.com/reports/2023-01-numoen#h-01-precision-loss-in-the-invariant-function-can-lead-to-loss-of-funds
     error InvariantError();
 
@@ -23,6 +23,9 @@ contract DivisionBeforeMultiplication {
 
         // @audit: division can cause rounding so always want to do it last. Doing
         // multiplicationa after division as occurs here can cause precision loss
+
+        // mulDiv(amount0, 1e18, liquidity) = amount0 * 1e18 / liquidity
+
         uint256 scale0 = Math.mulDiv(amount0, 1e18, liquidity) * token0Scale;
         uint256 scale1 = Math.mulDiv(amount1, 1e18, liquidity) * token1Scale;
 

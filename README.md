@@ -110,3 +110,7 @@ All code, practices, and patterns in this repository are used for educational pu
 [issues-url]: https://github.com/kkontheway/Mini-Exploits-Playground/issues
 [license-shield]: https://img.shields.io/github/license/kkontheway/Mini-Exploits-Playground.svg?style=for-the-badge
 [license-url]: https://github.com/kkontheway/Mini-Exploits-Playground/LICENSE.txt
+
+# Stars History
+
+[![Stargazers over time](https://starchart.cc/kkontheway/Auditor-Playground.svg?variant=adaptive)](https://starchart.cc/kkontheway/Auditor-Playground)
