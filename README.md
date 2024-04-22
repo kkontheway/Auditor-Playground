@@ -63,12 +63,12 @@ forge test --mt test_functionName
 ## Roadmap
 
 - [ ] Reentrancy
-  - [ ] Normal Reentrancy
+  - [x] Normal Reentrancy
   - [ ] Readonly Reentrancy
   - [ ] Cross Function Reentrancy
   - [ ] Cross Function Reentrancy
   - [ ] Cross Chain Reentrancy
-- [ ] Signature Reply
+- [x] Signature Reply
 - [ ] Over/Under Flow
 - [ ] Oracle Manipulation
 - [ ] Multi-language Support
@@ -79,6 +79,7 @@ forge test --mt test_functionName
 - [ ] Proxy Attack
 - [ ] msg.value in a Loop
 - [ ] Flashloan Attack
+- [ ] Lending&Borrow Attack
 - [ ] Precision Loss
   - [x] Division Before Multiplication
   - [x] Rounding Down To Zero
