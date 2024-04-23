@@ -47,7 +47,7 @@
 ## QuickStart
 ```
 git clone https://github.com/kkontheway/Mini-Exploits-Playground.git
-cd Mini-Exploits-Playground
+cd Auditor-Playground
 forge install
 ```
 
