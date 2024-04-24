@@ -9,7 +9,7 @@ import "../lib/openzeppelin-contracts/contracts/token/ERC721/extensions/ERC721Bu
 import "../lib/openzeppelin-contracts/contracts/access/AccessControl.sol";
 import "../lib/openzeppelin-contracts/contracts/utils/Counters.sol";
 
-contract DamnValuableNFT is ERC721, ERC721Burnable, AccessControl {
+contract AuditorPalygroundNFT is ERC721, ERC721Burnable, AccessControl {
     using Counters for Counters.Counter;
 
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");

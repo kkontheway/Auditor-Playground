@@ -4,10 +4,10 @@ pragma solidity 0.8.17;
 import {ERC20Snapshot, ERC20} from "../lib/openzeppelin-contracts/contracts/token/ERC20/extensions/ERC20Snapshot.sol";
 
 /**
- * @title DamnValuableTokenSnapshot
- * @author Damn Vulnerable DeFi (https://damnvulnerabledefi.xyz)
+ * @title AuditorplaygroundTokenSnapshot
+ * @author kk
  */
-contract DamnValuableTokenSnapshot is ERC20Snapshot {
+contract AuditorplaygroundTokenSnapshot is ERC20Snapshot {
     uint256 private lastSnapshotId;
 
     constructor(uint256 initialSupply) ERC20("AuditorPlaygrounToken", "APT") {

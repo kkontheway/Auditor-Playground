@@ -4,7 +4,7 @@ pragma solidity ^0.8.13;
 import "forge-std/Test.sol";
 import "../../src/SignatureReply/Wallet.sol";
 import "../../lib/openzeppelin-contracts/contracts/utils/cryptography/ECDSA.sol";
-import "../../src/MiniToken.sol";
+import "../../src/AuditPlaygroundToken.sol";
 
 contract SignatureReplyTest is Test {
     uint256 internal constant USER_TOKEN_BALANCE = 10_000;

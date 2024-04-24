@@ -74,7 +74,7 @@ forge test --mt test_functionName
 - [ ] Multi-language Support
 - [ ] DDOS
   - [ ] uint-to-enum
-- [ ] Weak Randomness
+- [x] Weak Randomness
 - [ ] Missing Access Control
 - [ ] Proxy Attack
 - [ ] msg.value in a Loop
@@ -87,6 +87,8 @@ forge test --mt test_functionName
   - [ ] Rounding Leaks Value Form Protocol
   - [x] No Precision Scaling
   - [ ] Mis matched Precision Scaling
+- [ ] Mistake By Developer
+  - [ ] Unexpected Empty Inputs
 
 
 
