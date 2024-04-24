@@ -15,7 +15,7 @@ contract DamnValuableNFT is ERC721, ERC721Burnable, AccessControl {
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     Counters.Counter private _tokenIdCounter;
 
-    constructor() ERC721("MiniNFT", "MNNFT") {
+    constructor() ERC721("AuditorPlaygroundNFT", "APNFT") {
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _setupRole(MINTER_ROLE, msg.sender);
     }

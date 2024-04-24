@@ -10,7 +10,7 @@ pragma solidity ^0.8.17;
 import "../lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
 
 contract MiniToken is ERC20 {
-    constructor() ERC20("MiniToken", "MNT") {
+    constructor() ERC20("AuditorPlayground", "APT") {
         _mint(msg.sender, type(uint256).max);
     }
 }
