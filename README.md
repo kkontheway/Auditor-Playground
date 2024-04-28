@@ -89,7 +89,9 @@ forge test --mt test_functionName
   - [ ] Mis matched Precision Scaling
 - [ ] Mistake By Developer
   - [ ] Unexpected Empty Inputs
-
+- [ ] Lending&Borrowing Attack
+  - [x] LiquidateLoanBeforeFirstPayment
+  - [x] Borrower Can not be Liquidate
 
 
 <!-- CONTRIBUTING -->
