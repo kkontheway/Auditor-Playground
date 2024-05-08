@@ -26,4 +26,12 @@ contract ICOGov is ReentrancyGuard {
         vault.transferFrom(msg.sender, treasury, _vaultTokenAmount);
         newToken.mint(msg.sender, tokenAmount);
     }
+
+    function getPrice(uint256 _vaultTokenAmount) public view returns (uint256) {
+        // Get token value from share
+        uint256 value = vault.shareToAmount(_vaultTokenAmount);
+        // Get number of token from value
+        uint256 tokenAmount = value / tokenPrice;
+        return tokenAmount;
+    }
 }

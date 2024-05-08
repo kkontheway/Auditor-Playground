@@ -21,7 +21,7 @@ contract Vault is ERC20, ReentrancyGuard {
     ERC20 public baseToken;
     IRouter public router;
 
-    constructor(ERC20 _baseToken, IRouter _router) public ERC20("VaultToken", "VT") {
+    constructor(ERC20 _baseToken, IRouter _router) ERC20("VaultToken", "VT") {
         baseToken = _baseToken;
         router = _router;
     }
