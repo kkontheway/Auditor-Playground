@@ -65,10 +65,11 @@ forge test --mt test_functionName
 - [ ] Reentrancy
   - [x] Normal Reentrancy
   - [x] Readonly Reentrancy
-  - [ ] Cross Function Reentrancy
-  - [ ] Cross Contract Reentrancy
+  - [x] Cross Function Reentrancy
+  - [x] Cross Contract Reentrancy
   - [ ] Cross Chain Reentrancy
 - [x] Signature Reply
+- [ ] ABI Collisions
 - [ ] Over/Under Flow
 - [ ] Oracle Manipulation
 - [ ] Multi-language Support
