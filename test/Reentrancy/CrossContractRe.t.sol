@@ -2,11 +2,11 @@
 pragma solidity 0.8.13;
 
 import "forge-std/Test.sol";
-import "../../src/Reentrancy/CrossContract-Re/EvilERC20.sol";
-import "../../src/Reentrancy/CrossContract-Re/ICOGov.sol";
-import "../../src/Reentrancy/CrossContract-Re/Vault.sol";
-import "../../src/Reentrancy/CrossContract-Re/GOVToken.sol";
-import "../../src/Reentrancy/CrossContract-Re/BaseToken.sol";
+import "../../src/Reentrancy/CrossContractReentrancy/EvilERC20.sol";
+import "../../src/Reentrancy/CrossContractReentrancy/ICOGov.sol";
+import "../../src/Reentrancy/CrossContractReentrancy/Vault.sol";
+import "../../src/Reentrancy/CrossContractReentrancy/GOVToken.sol";
+import "../../src/Reentrancy/CrossContractReentrancy/BaseToken.sol";
 
 contract CrossContractTest is Test {
     IRouter router = IRouter(0x10ED43C718714eb63d5aA57B78B54704E256024E);

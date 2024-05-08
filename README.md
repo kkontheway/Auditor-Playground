@@ -64,9 +64,9 @@ forge test --mt test_functionName
 
 - [ ] Reentrancy
   - [x] Normal Reentrancy
-  - [ ] Readonly Reentrancy
+  - [x] Readonly Reentrancy
   - [ ] Cross Function Reentrancy
-  - [ ] Cross Function Reentrancy
+  - [ ] Cross Contract Reentrancy
   - [ ] Cross Chain Reentrancy
 - [x] Signature Reply
 - [ ] Over/Under Flow

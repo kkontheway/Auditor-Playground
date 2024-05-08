@@ -1,0 +1,38 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "src/Proxy/UUPS/UUPS1.sol": {
+      "content": "// SPDX-License-Identifier: SEE LICENSE IN LICENSE\npragma solidity 0.8.13;\n\ncontract UUPS1 {\n    // 状态变量和proxy合约一致，防止插槽冲突\n    address public implementation;\n    address public admin;\n    string public words; // 字符串，可以通过逻辑合约的函数改变\n\n    // 改变proxy中状态变量，选择器： 0xc2985578\n    function foo() public {\n        words = \"old\";\n    }\n\n    // 升级函数，改变逻辑合约地址，只能由admin调用。选择器：0x0900f010\n    // UUPS中，逻辑函数中必须包含升级函数，不然就不能再升级了。\n    function upgrade(address newImplementation) external {\n        require(msg.sender == admin);\n        implementation = newImplementation;\n    }\n}\n"
+    }
+  },
+  "settings": {
+    "remappings": [
+      "ds-test/=lib/openzeppelin-contracts-upgradeable/lib/forge-std/lib/ds-test/src/",
+      "forge-std/=lib/forge-std/src/",
+      "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+      "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+    ],
+    "optimizer": {
+      "enabled": true,
+      "mode": "3",
+      "details": null,
+      "fallbackToOptimizingForSize": false,
+      "disableSystemRequestMemoization": true
+    },
+    "outputSelection": {
+      "*": {
+        "": [
+          "metadata"
+        ],
+        "*": [
+          "abi",
+          "evm.methodIdentifiers"
+        ]
+      }
+    },
+    "libraries": {},
+    "isSystem": false,
+    "forceEvmla": false,
+    "areLibrariesMissing": true
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "lib/forge-std/src/StdInvariant.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity >=0.6.2 <0.9.0;\n\npragma experimental ABIEncoderV2;\n\nabstract contract StdInvariant {\n    struct FuzzSelector {\n        address addr;\n        bytes4[] selectors;\n    }\n\n    struct FuzzInterface {\n        address addr;\n        string[] artifacts;\n    }\n\n    address[] private _excludedContracts;\n    address[] private _excludedSenders;\n    address[] private _targetedContracts;\n    address[] private _targetedSenders;\n\n    string[] private _excludedArtifacts;\n    string[] private _targetedArtifacts;\n\n    FuzzSelector[] private _targetedArtifactSelectors;\n    FuzzSelector[] private _targetedSelectors;\n\n    FuzzInterface[] private _targetedInterfaces;\n\n    // Functions for users:\n    // These are intended to be called in tests.\n\n    function excludeContract(address newExcludedContract_) internal {\n        _excludedContracts.push(newExcludedContract_);\n    }\n\n    function excludeSender(address newExcludedSender_) internal {\n        _excludedSenders.push(newExcludedSender_);\n    }\n\n    function excludeArtifact(string memory newExcludedArtifact_) internal {\n        _excludedArtifacts.push(newExcludedArtifact_);\n    }\n\n    function targetArtifact(string memory newTargetedArtifact_) internal {\n        _targetedArtifacts.push(newTargetedArtifact_);\n    }\n\n    function targetArtifactSelector(FuzzSelector memory newTargetedArtifactSelector_) internal {\n        _targetedArtifactSelectors.push(newTargetedArtifactSelector_);\n    }\n\n    function targetContract(address newTargetedContract_) internal {\n        _targetedContracts.push(newTargetedContract_);\n    }\n\n    function targetSelector(FuzzSelector memory newTargetedSelector_) internal {\n        _targetedSelectors.push(newTargetedSelector_);\n    }\n\n    function targetSender(address newTargetedSender_) internal {\n        _targetedSenders.push(newTargetedSender_);\n    }\n\n    function targetInterface(FuzzInterface memory newTargetedInterface_) internal {\n        _targetedInterfaces.push(newTargetedInterface_);\n    }\n\n    // Functions for forge:\n    // These are called by forge to run invariant tests and don't need to be called in tests.\n\n    function excludeArtifacts() public view returns (string[] memory excludedArtifacts_) {\n        excludedArtifacts_ = _excludedArtifacts;\n    }\n\n    function excludeContracts() public view returns (address[] memory excludedContracts_) {\n        excludedContracts_ = _excludedContracts;\n    }\n\n    function excludeSenders() public view returns (address[] memory excludedSenders_) {\n        excludedSenders_ = _excludedSenders;\n    }\n\n    function targetArtifacts() public view returns (string[] memory targetedArtifacts_) {\n        targetedArtifacts_ = _targetedArtifacts;\n    }\n\n    function targetArtifactSelectors() public view returns (FuzzSelector[] memory targetedArtifactSelectors_) {\n        targetedArtifactSelectors_ = _targetedArtifactSelectors;\n    }\n\n    function targetContracts() public view returns (address[] memory targetedContracts_) {\n        targetedContracts_ = _targetedContracts;\n    }\n\n    function targetSelectors() public view returns (FuzzSelector[] memory targetedSelectors_) {\n        targetedSelectors_ = _targetedSelectors;\n    }\n\n    function targetSenders() public view returns (address[] memory targetedSenders_) {\n        targetedSenders_ = _targetedSenders;\n    }\n\n    function targetInterfaces() public view returns (FuzzInterface[] memory targetedInterfaces_) {\n        targetedInterfaces_ = _targetedInterfaces;\n    }\n}\n"
+    }
+  },
+  "settings": {
+    "remappings": [
+      "ds-test/=lib/openzeppelin-contracts-upgradeable/lib/forge-std/lib/ds-test/src/",
+      "forge-std/=lib/forge-std/src/",
+      "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+      "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+    ],
+    "optimizer": {
+      "enabled": true,
+      "mode": "3",
+      "details": null,
+      "fallbackToOptimizingForSize": false,
+      "disableSystemRequestMemoization": true
+    },
+    "outputSelection": {
+      "*": {
+        "": [
+          "metadata"
+        ],
+        "*": [
+          "abi",
+          "evm.methodIdentifiers"
+        ]
+      }
+    },
+    "libraries": {},
+    "isSystem": false,
+    "forceEvmla": false,
+    "areLibrariesMissing": true
+  }
+}

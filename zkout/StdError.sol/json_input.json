@@ -1,0 +1,38 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "lib/forge-std/src/StdError.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n// Panics work for versions >=0.8.0, but we lowered the pragma to make this compatible with Test\npragma solidity >=0.6.2 <0.9.0;\n\nlibrary stdError {\n    bytes public constant assertionError = abi.encodeWithSignature(\"Panic(uint256)\", 0x01);\n    bytes public constant arithmeticError = abi.encodeWithSignature(\"Panic(uint256)\", 0x11);\n    bytes public constant divisionError = abi.encodeWithSignature(\"Panic(uint256)\", 0x12);\n    bytes public constant enumConversionError = abi.encodeWithSignature(\"Panic(uint256)\", 0x21);\n    bytes public constant encodeStorageError = abi.encodeWithSignature(\"Panic(uint256)\", 0x22);\n    bytes public constant popError = abi.encodeWithSignature(\"Panic(uint256)\", 0x31);\n    bytes public constant indexOOBError = abi.encodeWithSignature(\"Panic(uint256)\", 0x32);\n    bytes public constant memOverflowError = abi.encodeWithSignature(\"Panic(uint256)\", 0x41);\n    bytes public constant zeroVarError = abi.encodeWithSignature(\"Panic(uint256)\", 0x51);\n}\n"
+    }
+  },
+  "settings": {
+    "remappings": [
+      "ds-test/=lib/openzeppelin-contracts-upgradeable/lib/forge-std/lib/ds-test/src/",
+      "forge-std/=lib/forge-std/src/",
+      "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+      "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+    ],
+    "optimizer": {
+      "enabled": true,
+      "mode": "3",
+      "details": null,
+      "fallbackToOptimizingForSize": false,
+      "disableSystemRequestMemoization": true
+    },
+    "outputSelection": {
+      "*": {
+        "": [
+          "metadata"
+        ],
+        "*": [
+          "abi",
+          "evm.methodIdentifiers"
+        ]
+      }
+    },
+    "libraries": {},
+    "isSystem": false,
+    "forceEvmla": false,
+    "areLibrariesMissing": true
+  }
+}

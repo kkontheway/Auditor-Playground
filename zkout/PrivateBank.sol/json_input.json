@@ -1,0 +1,38 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "src/Reentrancy/ReadonlyReentrancy/PrivateBank.sol": {
+      "content": "// SPDX-License-Identifier: SEE LICENSE IN LICENSE\npragma solidity 0.8.13;\n\ncontract PrivateBank {\n    bool private lock;\n    mapping(address => uint256) public userBalance;\n\n    uint256 totalBalance;\n\n    modifier NonReentrant() {\n        require(!lock);\n        lock = true;\n        _;\n        lock = false;\n    }\n\n    function deposit() public payable NonReentrant {\n        userBalance[msg.sender] += msg.value;\n        totalBalance += msg.value;\n    }\n\n    function withdrawAll() public NonReentrant {\n        uint256 balance = userBalance[msg.sender];\n        require(balance > 0);\n        totalBalance -= balance;\n        (bool done,) = msg.sender.call{value: balance}(\"\");\n        require(done);\n        userBalance[msg.sender] = 0;\n    }\n}\n"
+    }
+  },
+  "settings": {
+    "remappings": [
+      "ds-test/=lib/openzeppelin-contracts-upgradeable/lib/forge-std/lib/ds-test/src/",
+      "forge-std/=lib/forge-std/src/",
+      "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+      "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+    ],
+    "optimizer": {
+      "enabled": true,
+      "mode": "3",
+      "details": null,
+      "fallbackToOptimizingForSize": false,
+      "disableSystemRequestMemoization": true
+    },
+    "outputSelection": {
+      "*": {
+        "": [
+          "metadata"
+        ],
+        "*": [
+          "abi",
+          "evm.methodIdentifiers"
+        ]
+      }
+    },
+    "libraries": {},
+    "isSystem": false,
+    "forceEvmla": false,
+    "areLibrariesMissing": true
+  }
+}

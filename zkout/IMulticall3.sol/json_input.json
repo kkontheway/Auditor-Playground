@@ -1,0 +1,38 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "lib/forge-std/src/interfaces/IMulticall3.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity >=0.6.2 <0.9.0;\n\npragma experimental ABIEncoderV2;\n\ninterface IMulticall3 {\n    struct Call {\n        address target;\n        bytes callData;\n    }\n\n    struct Call3 {\n        address target;\n        bool allowFailure;\n        bytes callData;\n    }\n\n    struct Call3Value {\n        address target;\n        bool allowFailure;\n        uint256 value;\n        bytes callData;\n    }\n\n    struct Result {\n        bool success;\n        bytes returnData;\n    }\n\n    function aggregate(Call[] calldata calls)\n        external\n        payable\n        returns (uint256 blockNumber, bytes[] memory returnData);\n\n    function aggregate3(Call3[] calldata calls) external payable returns (Result[] memory returnData);\n\n    function aggregate3Value(Call3Value[] calldata calls) external payable returns (Result[] memory returnData);\n\n    function blockAndAggregate(Call[] calldata calls)\n        external\n        payable\n        returns (uint256 blockNumber, bytes32 blockHash, Result[] memory returnData);\n\n    function getBasefee() external view returns (uint256 basefee);\n\n    function getBlockHash(uint256 blockNumber) external view returns (bytes32 blockHash);\n\n    function getBlockNumber() external view returns (uint256 blockNumber);\n\n    function getChainId() external view returns (uint256 chainid);\n\n    function getCurrentBlockCoinbase() external view returns (address coinbase);\n\n    function getCurrentBlockDifficulty() external view returns (uint256 difficulty);\n\n    function getCurrentBlockGasLimit() external view returns (uint256 gaslimit);\n\n    function getCurrentBlockTimestamp() external view returns (uint256 timestamp);\n\n    function getEthBalance(address addr) external view returns (uint256 balance);\n\n    function getLastBlockHash() external view returns (bytes32 blockHash);\n\n    function tryAggregate(bool requireSuccess, Call[] calldata calls)\n        external\n        payable\n        returns (Result[] memory returnData);\n\n    function tryBlockAndAggregate(bool requireSuccess, Call[] calldata calls)\n        external\n        payable\n        returns (uint256 blockNumber, bytes32 blockHash, Result[] memory returnData);\n}\n"
+    }
+  },
+  "settings": {
+    "remappings": [
+      "ds-test/=lib/openzeppelin-contracts-upgradeable/lib/forge-std/lib/ds-test/src/",
+      "forge-std/=lib/forge-std/src/",
+      "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+      "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+    ],
+    "optimizer": {
+      "enabled": true,
+      "mode": "3",
+      "details": null,
+      "fallbackToOptimizingForSize": false,
+      "disableSystemRequestMemoization": true
+    },
+    "outputSelection": {
+      "*": {
+        "": [
+          "metadata"
+        ],
+        "*": [
+          "abi",
+          "evm.methodIdentifiers"
+        ]
+      }
+    },
+    "libraries": {},
+    "isSystem": false,
+    "forceEvmla": false,
+    "areLibrariesMissing": true
+  }
+}

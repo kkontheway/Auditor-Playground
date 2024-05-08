@@ -1,0 +1,610 @@
+{
+  "contracts": {
+    "src/Proxy/UUPS/Proxy.sol": {
+      "UUPSProxy": {
+        "abi": [
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "_implementation",
+                "type": "address"
+              }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+          },
+          {
+            "stateMutability": "payable",
+            "type": "fallback"
+          },
+          {
+            "inputs": [],
+            "name": "admin",
+            "outputs": [
+              {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [],
+            "name": "implementation",
+            "outputs": [
+              {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          },
+          {
+            "inputs": [],
+            "name": "words",
+            "outputs": [
+              {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+              }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+          }
+        ],
+        "metadata": {
+          "optimizer_settings": {
+            "is_debug_logging_enabled": false,
+            "is_fallback_to_size_enabled": false,
+            "is_system_request_memoization_disabled": true,
+            "is_verify_each_enabled": false,
+            "jump_table_density_threshold": null,
+            "level_back_end": "Aggressive",
+            "level_middle_end": "Aggressive",
+            "level_middle_end_size": "Zero"
+          },
+          "solc_metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_implementation\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[],\"name\":\"admin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"implementation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"words\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/Proxy/UUPS/Proxy.sol\":\"UUPSProxy\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"details\":{\"constantOptimizer\":false,\"cse\":false,\"deduplicate\":false,\"inliner\":false,\"jumpdestRemover\":false,\"orderLiterals\":false,\"peephole\":false,\"yul\":true,\"yulDetails\":{\"optimizerSteps\":\"dhfoDgvulfnTUtnIf[xa[r]EscLMcCTUtTOntnfDIulLculVcul [j]Tpeulxa[rul]xa[r]cLgvifCTUca[r]LSsTFOtfDnca[r]Iulc]jmul[jul] VcTOcul jmul\",\"stackAllocation\":true}},\"runs\":200},\"remappings\":[\":ds-test/=lib/openzeppelin-contracts-upgradeable/lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"src/Proxy/UUPS/Proxy.sol\":{\"keccak256\":\"0xa8037ef897be1824be2cc78b93924f707f2a4ad4b064d0039c25437440567e66\",\"license\":\"SEE LICENSE IN LICENSE\",\"urls\":[\"bzz-raw://c7816a6bc27b7d9c25edb3135dbd4c754247b1f5f4b576be3311c61c247ddec5\",\"dweb:/ipfs/QmURn8DDGQBjmJnTAzXeRWCRMqQr2dawAvRoXbUWrG7Z7J\"]}},\"version\":1}",
+          "solc_version": "0.8.13",
+          "solc_zkvm_edition": null,
+          "zk_version": "1.4.1"
+        },
+        "evm": {
+          "legacyAssembly": null,
+          "assembly": "\t.text\n\t.file\t\"Proxy.sol:UUPSProxy\"\n\t.globl\t__entry\n__entry:\n.func_begin0:\n\tadd\tr1, r0, r3\n\tshr.s\t96, r3, r3\n\tand\t@CPI0_0[0], r3, r3\n\tand!\t1, r2, r2\n\tjump.ne\t@.BB0_1\n\tadd\t128, r0, r2\n\tst.1\t64, r2\n\tsub.s!\t4, r3, r2\n\tjump.lt\t@.BB0_14\n\tld\tr1, r2\n\tshr.s\t224, r2, r2\n\tsub.s!\t@CPI0_5[0], r2, r4\n\tjump.eq\t@.BB0_31\n\tsub.s!\t@CPI0_6[0], r2, r4\n\tjump.eq\t@.BB0_34\n\tsub.s!\t@CPI0_7[0], r2, r2\n\tjump.ne\t@.BB0_14\n\tcontext.get_context_u128\tr1\n\tsub!\tr1, r0, r1\n\tjump.ne\t@.BB0_2\n\tadd\t1, r0, r1\n\tsload\tr1, r1\n\tjump\t@.BB0_33\n.BB0_1:\n\tcontext.get_context_u128\tr2\n\tsub!\tr2, r0, r2\n\tjump.ne\t@.BB0_2\n\tadd\t31, r3, r2\n\tand\t@CPI0_1[0], r2, r2\n\tadd\t128, r2, r2\n\tst.1\t64, r2\n\tand\t31, r3, r2\n\tshr.s!\t5, r3, r4\n\tjump.eq\t@.BB0_55\n\tadd\tr0, r0, r5\n.BB0_5:\n\tshl.s\t5, r5, r6\n\tptr.add\tr1, r6, r7\n\tld\tr7, r7\n\tadd\t128, r6, r6\n\tst.1\tr6, r7\n\tadd\t1, r5, r5\n\tsub!\tr5, r4, r6\n\tjump.lt\t@.BB0_5\n.BB0_55:\n\tsub!\tr2, r0, r5\n\tjump.eq\t@.BB0_7\n\tshl.s\t5, r4, r4\n\tptr.add\tr1, r4, r1\n\tshl.s\t3, r2, r2\n\tadd\t128, r4, r4\n\tld.1\tr4, r5\n\tshl\tr5, r2, r5\n\tshr\tr5, r2, r5\n\tld\tr1, r1\n\tsub\t256, r2, r2\n\tshr\tr1, r2, r1\n\tshl\tr1, r2, r1\n\tor\tr1, r5, r1\n\tst.1\tr4, r1\n.BB0_7:\n\tsub.s!\t32, r3, r1\n\tjump.lt\t@.BB0_2\n\tld.1\t128, r1\n\tsub.s!\t@CPI0_2[0], r1, r2\n\tjump.gt\t@.BB0_2\n\tsload\tr0, r2\n\tand\t@CPI0_3[0], r2, r2\n\tor\tr2, r1, r1\n\tsstore\tr0, r1\n\tadd\t1, r0, r1\n\tsload\tr1, r2\n\tand\t@CPI0_3[0], r2, r2\n\tcontext.caller\tr3\n\tor\tr2, r3, r2\n\tsstore\tr1, r2\n\tadd\t32, r0, r1\n\tst.2\t256, r1\n\tst.2\t288, r0\n\tadd\t@CPI0_4[0], r0, r1\n\tret.ok.to_label\tr1, @DEFAULT_FAR_RETURN\n.BB0_14:\n\tand\t31, r3, r4\n\tsload\tr0, r2\n\tand\t@CPI0_2[0], r2, r2\n\tshr.s!\t5, r3, r5\n\tjump.eq\t@.BB0_54\n\tadd\tr0, r0, r6\n.BB0_16:\n\tshl.s\t5, r6, r7\n\tptr.add\tr1, r7, r8\n\tld\tr8, r8\n\tadd\t128, r7, r7\n\tst.1\tr7, r8\n\tadd\t1, r6, r6\n\tsub!\tr6, r5, r7\n\tjump.lt\t@.BB0_16\n.BB0_54:\n\tsub!\tr4, r0, r6\n\tjump.eq\t@.BB0_18\n\tshl.s\t5, r5, r5\n\tptr.add\tr1, r5, r6\n\tshl.s\t3, r4, r4\n\tadd\t128, r5, r5\n\tld.1\tr5, r7\n\tshl\tr7, r4, r7\n\tshr\tr7, r4, r7\n\tld\tr6, r6\n\tsub\t256, r4, r4\n\tshr\tr6, r4, r6\n\tshl\tr6, r4, r4\n\tor\tr4, r7, r4\n\tst.1\tr5, r4\n.BB0_18:\n\tadd\t128, r3, r4\n\tst.1\tr4, r0\n\tcontext.gas_left\tr4\n\tsub.s!\t4, r2, r5\n\tjump.ne\t@.BB0_19\n\tptr.add\tr1, r3, r1\n\tadd\tstack[@returndatasize], r0, r2\n\tsub!\tr2, r0, r3\n\tjump.ne\t@.BB0_22\n.BB0_30:\n\tadd\tr0, r0, r1\n\tret.ok.to_label\tr1, @DEFAULT_FAR_RETURN\n.BB0_19:\n\tadd\t@CPI0_0[0], r0, r1\n\tsub.s!\t@CPI0_0[0], r4, r5\n\tadd.ge\tr1, r0, r4\n\tshl.s\t192, r4, r1\n\tshl.s\t96, r3, r3\n\tor\tr1, r3, r1\n\tor\t@CPI0_14[0], r1, r1\n\tnear_call\tr0, @__delegatecall, @DEFAULT_UNWIND\n\tadd\tr1, r0, r2\n\tshr.s\t96, r2, r2\n\tand\t@CPI0_0[0], r2, stack[@returndatasize]\n\tand\t@CPI0_0[0], r2, r2\n\tsub!\tr2, r0, r3\n\tjump.eq\t@.BB0_30\n.BB0_22:\n\tadd\t31, r2, r3\n\tsub.s\t32, r0, r4\n\tand\tr3, r4, r3\n\tadd\t63, r3, r3\n\tand\tr3, r4, r3\n\tld.1\t64, r4\n\tadd\tr4, r3, r3\n\tsub!\tr3, r4, r5\n\tadd\t0, r0, r5\n\tadd.lt\t1, r0, r5\n\tsub.s!\t@CPI0_15[0], r3, r6\n\tjump.gt\t@.BB0_24\n\tand!\t1, r5, r5\n\tjump.ne\t@.BB0_24\n\tst.1\t64, r3\n\tand\t31, r2, r3\n\tst.1.inc\tr4, r2, r4\n\tshr.s!\t5, r2, r2\n\tjump.eq\t@.BB0_53\n\tadd\tr0, r0, r5\n.BB0_28:\n\tshl.s\t5, r5, r6\n\tadd\tr4, r6, r7\n\tptr.add\tr1, r6, r6\n\tld\tr6, r6\n\tst.1\tr7, r6\n\tadd\t1, r5, r5\n\tsub!\tr5, r2, r6\n\tjump.lt\t@.BB0_28\n.BB0_53:\n\tsub!\tr3, r0, r5\n\tjump.eq\t@.BB0_30\n\tshl.s\t5, r2, r2\n\tptr.add\tr1, r2, r1\n\tadd\tr4, r2, r2\n\tshl.s\t3, r3, r3\n\tld.1\tr2, r4\n\tshl\tr4, r3, r4\n\tshr\tr4, r3, r4\n\tld\tr1, r1\n\tsub\t256, r3, r3\n\tshr\tr1, r3, r1\n\tshl\tr1, r3, r1\n\tor\tr1, r4, r1\n\tst.1\tr2, r1\n\tadd\tr0, r0, r1\n\tret.ok.to_label\tr1, @DEFAULT_FAR_RETURN\n.BB0_31:\n\tcontext.get_context_u128\tr1\n\tsub!\tr1, r0, r1\n\tjump.ne\t@.BB0_2\n\tsload\tr0, r1\n.BB0_33:\n\tand\t@CPI0_2[0], r1, r1\n\tst.1\t128, r1\n\tadd\t@CPI0_8[0], r0, r1\n\tret.ok.to_label\tr1, @DEFAULT_FAR_RETURN\n.BB0_34:\n\tcontext.get_context_u128\tr1\n\tsub!\tr1, r0, r1\n\tjump.ne\t@.BB0_2\n\tadd\t2, r0, r3\n\tsload\tr3, r2\n\tand!\t1, r2, r4\n\tshr.s\t1, r2, r5\n\tand\t127, r5, r1\n\tadd.ne\tr5, r0, r1\n\tsub.s!\t31, r1, r5\n\tadd\t0, r0, r5\n\tadd.gt\t1, r0, r5\n\tsub!\tr4, r5, r5\n\tjump.eq\t@.BB0_37\n\tadd\t@CPI0_12[0], r0, r1\n\tst.1\t0, r1\n\tadd\t34, r0, r1\n\tst.1\t4, r1\n\tadd\t@CPI0_13[0], r0, r1\n\tret.revert.to_label\tr1, @DEFAULT_FAR_REVERT\n.BB0_2:\n\tadd\tr0, r0, r1\n\tret.revert.to_label\tr1, @DEFAULT_FAR_REVERT\n.BB0_37:\n\tst.1\t128, r1\n\tsub!\tr4, r0, r4\n\tjump.ne\t@.BB0_47\n\tsub.s\t256, r0, r1\n\tand\tr2, r1, r1\n\tst.1\t160, r1\n\tadd\t192, r0, r1\n\tjump\t@.BB0_40\n.BB0_47:\n\tst.1\t0, r3\n\tsub.s!\t2, r2, r2\n\tjump.ge\t@.BB0_49\n\tadd\t160, r0, r1\n\tjump\t@.BB0_40\n.BB0_49:\n\tadd\t@CPI0_9[0], r0, r2\n\tadd\tr0, r0, r4\n.BB0_50:\n\tadd\tr4, r0, r3\n\tsload\tr2, r4\n\tadd\t160, r3, r5\n\tst.1\tr5, r4\n\tadd\t1, r2, r2\n\tadd\t32, r3, r4\n\tsub!\tr4, r1, r5\n\tjump.lt\t@.BB0_50\n\tadd\t@CPI0_10[0], r3, r1\n\tsub.s!\t@CPI0_11[0], r1, r1\n\tjump.ge\t@.BB0_39\n.BB0_24:\n\tadd\t@CPI0_12[0], r0, r1\n\tst.1\t0, r1\n\tadd\t65, r0, r1\n\tst.1\t4, r1\n\tadd\t@CPI0_13[0], r0, r1\n\tret.revert.to_label\tr1, @DEFAULT_FAR_REVERT\n.BB0_39:\n\tadd\t95, r3, r1\n\tsub.s\t32, r0, r2\n\tand\tr1, r2, r1\n\tadd\t128, r1, r1\n.BB0_40:\n\tst.1\t64, r1\n\tadd\t32, r0, r2\n\tst.1.inc\tr1, r2, r3\n\tld.1\t128, r2\n\tst.1\tr3, r2\n\tsub!\tr2, r0, r3\n\tjump.eq\t@.BB0_45\n\tadd\t64, r1, r3\n\tadd\tr0, r0, r4\n.BB0_42:\n\tadd\tr4, r3, r5\n\tadd\t160, r4, r6\n\tld.1\tr6, r6\n\tst.1\tr5, r6\n\tadd\t32, r4, r4\n\tsub!\tr4, r2, r5\n\tjump.lt\t@.BB0_42\n\tsub!\tr4, r2, r4\n\tjump.le\t@.BB0_45\n\tadd\tr2, r3, r3\n\tst.1\tr3, r0\n.BB0_45:\n\tadd\t31, r2, r2\n\tsub.s\t32, r0, r3\n\tand\tr2, r3, r2\n\tadd\t64, r2, r2\n\tadd\t@CPI0_0[0], r0, r3\n\tsub.s!\t@CPI0_0[0], r2, r4\n\tadd.ge\tr3, r0, r2\n\tsub.s!\t@CPI0_0[0], r1, r4\n\tadd.ge\tr3, r0, r1\n\tshl.s\t64, r1, r1\n\tshl.s\t96, r2, r2\n\tor\tr2, r1, r1\n\tret.ok.to_label\tr1, @DEFAULT_FAR_RETURN\n.func_end0:\n\n__delegatecall:\n.func_begin1:\n.tmp0:\n\tfar_call.delegate\tr1, r2, @.BB1_2\n.tmp1:\n\tadd\t1, r0, r2\n\tret\n.BB1_2:\n.tmp2:\n\tadd\tr0, r0, r2\n\tret\n.func_end1:\n\n\t.data\n\t.p2align\t5, 0x0\nreturndatasize:\n\t.cell 0\n\n\t.note.GNU-stack\n\t.rodata\nCPI0_0:\n\t.cell 4294967295\nCPI0_1:\n\t.cell 8589934560\nCPI0_2:\n\t.cell 1461501637330902918203684832716283019655932542975\nCPI0_3:\n\t.cell -1461501637330902918203684832716283019655932542976\nCPI0_4:\n\t.cell 53919893334301279589334030174039261352344891250716429051063678533632\nCPI0_5:\n\t.cell 1549851163\nCPI0_6:\n\t.cell 4072872921\nCPI0_7:\n\t.cell 4166100032\nCPI0_8:\n\t.cell 2535301202817642044428229017600\nCPI0_9:\n\t.cell 29102676481673041902632991033461445430619272659676223336789171408008386403022\nCPI0_10:\n\t.cell -18446744073709551393\nCPI0_11:\n\t.cell -18446744073709551488\nCPI0_12:\n\t.cell 35408467139433450592217433187231851964531694900788300625387963629091585785856\nCPI0_13:\n\t.cell 2852213850513516153367582212096\nCPI0_14:\n\t.cell 2361183241434822606848\nCPI0_15:\n\t.cell 18446744073709551615\n",
+          "bytecode": {
+            "object": "00010000000000020000000003010019000000600330027000000048033001970000000102200190000000180000c13d0000008002000039000000400020043f000000040230008c0000004e0000413d000000000201043b000000e0022002700000004d0420009c000000b10000613d0000004e0420009c000000b90000613d0000004f0220009c0000004e0000c13d0000000001000416000000000101004b000000cd0000c13d0000000101000039000000000101041a000000b50000013d0000000002000416000000000202004b000000cd0000c13d0000001f0230003900000049022001970000008002200039000000400020043f0000001f0230018f00000005043002720000002b0000613d00000000050000190000000506500210000000000761034f000000000707043b000000800660003900000000007604350000000105500039000000000645004b000000230000413d000000000502004b0000003a0000613d0000000504400210000000000141034f00000003022002100000008004400039000000000504043300000000052501cf000000000525022f000000000101043b0000010002200089000000000121022f00000000012101cf000000000151019f0000000000140435000000200130008c000000cd0000413d000000800100043d0000004a0210009c000000cd0000213d000000000200041a0000004b02200197000000000112019f000000000010041b0000000101000039000000000201041a0000004b022001970000000003000411000000000232019f000000000021041b0000002001000039000001000010044300000120000004430000004c010000410000011a0001042e0000001f0430018f000000000200041a0000004a0220019700000005053002720000005c0000613d00000000060000190000000507600210000000000871034f000000000808043b000000800770003900000000008704350000000106600039000000000756004b000000540000413d000000000604004b0000006b0000613d0000000505500210000000000651034f00000003044002100000008005500039000000000705043300000000074701cf000000000747022f000000000606043b0000010004400089000000000646022f00000000044601cf000000000474019f0000000000450435000000800430003900000000000404350000000004000414000000040520008c000000760000c13d000000000131034f0000000002000031000000000302004b000000840000c13d00000000010000190000011a0001042e0000004801000041000000480540009c0000000004018019000000c0014002100000006003300210000000000131019f00000056011001c7011901140000040f00000000020100190000006002200270000000480020019d0000004802200197000000000302004b000000740000613d0000001f03200039000000200400008a000000000343016f0000003f03300039000000000343016f000000400400043d0000000003340019000000000543004b00000000050000190000000105004039000000570630009c000000e90000213d0000000105500190000000e90000c13d000000400030043f0000001f0320018f00000000042404360000000502200272000000a00000613d000000000500001900000005065002100000000007640019000000000661034f000000000606043b00000000006704350000000105500039000000000625004b000000980000413d000000000503004b000000740000613d0000000502200210000000000121034f00000000022400190000000303300210000000000402043300000000043401cf000000000434022f000000000101043b0000010003300089000000000131022f00000000013101cf000000000141019f000000000012043500000000010000190000011a0001042e0000000001000416000000000101004b000000cd0000c13d000000000100041a0000004a01100197000000800010043f00000050010000410000011a0001042e0000000001000416000000000101004b000000cd0000c13d0000000203000039000000000203041a000000010420019000000001052002700000007f0150018f000000000105c0190000001f0510008c00000000050000190000000105002039000000000554004b000000cf0000613d000000540100004100000000001004350000002201000039000000040010043f00000055010000410000011b0001043000000000010000190000011b00010430000000800010043f000000000404004b000000d70000c13d000001000100008a000000000112016f000000a00010043f000000c001000039000000f30000013d0000000000300435000000020220008c000000dc0000813d000000a001000039000000f30000013d000000510200004100000000040000190000000003040019000000000402041a000000a005300039000000000045043500000001022000390000002004300039000000000514004b000000de0000413d0000005201300041000000530110009c000000ef0000813d000000540100004100000000001004350000004101000039000000040010043f00000055010000410000011b000104300000005f01300039000000200200008a000000000121016f0000008001100039000000400010043f00000020020000390000000003210436000000800200043d0000000000230435000000000302004b000001070000613d000000400310003900000000040000190000000005340019000000a006400039000000000606043300000000006504350000002004400039000000000524004b000000fc0000413d000000000424004b000001070000a13d000000000332001900000000000304350000001f02200039000000200300008a000000000232016f00000040022000390000004803000041000000480420009c0000000002038019000000480410009c000000000103801900000040011002100000006002200210000000000112019f0000011a0001042e00000117002104250000000102000039000000000001042d0000000002000019000000000001042d00000119000004320000011a0001042e0000011b00010430000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffff00000000000000000000000000000000000000000000000000000001ffffffe0000000000000000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000000000000000000000000000000000000000000200000000000000000000000000000040000001000000000000000000000000000000000000000000000000000000000000000000000000005c60da1b00000000000000000000000000000000000000000000000000000000f2c31bd900000000000000000000000000000000000000000000000000000000f851a4400000000000000000000000000000000000000020000000800000000000000000405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5aceffffffffffffffffffffffffffffffffffffffffffffffff00000000000000dfffffffffffffffffffffffffffffffffffffffffffffffff00000000000000804e487b710000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000240000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000ffffffffffffffff0689351d978a7ee33a3eb7bec9565b6ffbc9eb4a05669215fb07e80039c66d71"
+          },
+          "methodIdentifiers": {
+            "admin()": "f851a440",
+            "implementation()": "5c60da1b",
+            "words()": "f2c31bd9"
+          }
+        },
+        "irOptimized": "/// @use-src 0:\"src/Proxy/UUPS/Proxy.sol\"\nobject \"UUPSProxy_37\" {\n    code {\n        {\n            /// @src 0:76:428  \"contract UUPSProxy {...\"\n            let _1 := memoryguard(0x80)\n            if callvalue() { revert(0, 0) }\n            let programSize := datasize(\"UUPSProxy_37\")\n            let argSize := sub(codesize(), programSize)\n            let newFreePtr := add(_1, and(add(argSize, 31), not(31)))\n            if or(gt(newFreePtr, sub(shl(64, 1), 1)), lt(newFreePtr, _1))\n            {\n                mstore(/** @src -1:-1:-1 */ 0, /** @src 0:76:428  \"contract UUPSProxy {...\" */ shl(224, 0x4e487b71))\n                mstore(4, 0x41)\n                revert(/** @src -1:-1:-1 */ 0, /** @src 0:76:428  \"contract UUPSProxy {...\" */ 0x24)\n            }\n            mstore(64, newFreePtr)\n            codecopy(_1, programSize, argSize)\n            if slt(sub(add(_1, argSize), _1), 32)\n            {\n                revert(/** @src -1:-1:-1 */ 0, 0)\n            }\n            /// @src 0:76:428  \"contract UUPSProxy {...\"\n            let value := mload(_1)\n            if iszero(eq(value, and(value, sub(shl(160, 1), 1))))\n            {\n                revert(/** @src -1:-1:-1 */ 0, 0)\n            }\n            /// @src 0:76:428  \"contract UUPSProxy {...\"\n            constructor_UUPSProxy(value)\n            let _2 := mload(64)\n            let _3 := datasize(\"UUPSProxy_37_deployed\")\n            codecopy(_2, dataoffset(\"UUPSProxy_37_deployed\"), _3)\n            return(_2, _3)\n        }\n        /// @ast-id 22 @src 0:188:302  \"constructor(address _implementation) {...\"\n        function constructor_UUPSProxy(var_implementation)\n        {\n            /// @src 0:76:428  \"contract UUPSProxy {...\"\n            let _1 := not(sub(shl(160, 1), 1))\n            sstore(/** @src 0:235:267  \"implementation = _implementation\" */ 0x00, /** @src 0:76:428  \"contract UUPSProxy {...\" */ or(and(sload(/** @src 0:235:267  \"implementation = _implementation\" */ 0x00), /** @src 0:76:428  \"contract UUPSProxy {...\" */ _1), and(var_implementation, sub(shl(160, 1), 1))))\n            sstore(/** @src 0:277:295  \"admin = msg.sender\" */ 0x01, /** @src 0:76:428  \"contract UUPSProxy {...\" */ or(and(sload(/** @src 0:277:295  \"admin = msg.sender\" */ 0x01), /** @src 0:76:428  \"contract UUPSProxy {...\" */ _1), /** @src 0:285:295  \"msg.sender\" */ caller()))\n        }\n    }\n    /// @use-src 0:\"src/Proxy/UUPS/Proxy.sol\"\n    object \"UUPSProxy_37_deployed\" {\n        code {\n            {\n                /// @src 0:76:428  \"contract UUPSProxy {...\"\n                let _1 := memoryguard(0x80)\n                mstore(64, _1)\n                if iszero(lt(calldatasize(), 4))\n                {\n                    let _2 := 0\n                    switch shr(224, calldataload(_2))\n                    case 0x5c60da1b {\n                        if callvalue() { revert(_2, _2) }\n                        if slt(add(calldatasize(), not(3)), _2) { revert(_2, _2) }\n                        mstore(_1, and(sload(_2), sub(shl(160, 1), 1)))\n                        return(_1, 32)\n                    }\n                    case 0xf2c31bd9 {\n                        if callvalue() { revert(_2, _2) }\n                        if slt(add(calldatasize(), not(3)), _2) { revert(_2, _2) }\n                        let memPtr := mload(64)\n                        let ret := _2\n                        let slotValue := sload(/** @src 0:162:181  \"string public words\" */ 2)\n                        /// @src 0:76:428  \"contract UUPSProxy {...\"\n                        let length := _2\n                        let _3 := 1\n                        length := shr(_3, slotValue)\n                        let outOfPlaceEncoding := and(slotValue, _3)\n                        if iszero(outOfPlaceEncoding) { length := and(length, 0x7f) }\n                        let _4 := 32\n                        if eq(outOfPlaceEncoding, lt(length, _4))\n                        {\n                            mstore(_2, shl(224, 0x4e487b71))\n                            mstore(4, 0x22)\n                            revert(_2, 0x24)\n                        }\n                        let pos := array_storeLengthForEncoding_string(memPtr, length)\n                        switch outOfPlaceEncoding\n                        case 0 {\n                            mstore(pos, and(slotValue, not(255)))\n                            ret := add(pos, _4)\n                        }\n                        case 1 {\n                            let dataPos := array_dataslot_string_storage()\n                            let i := _2\n                            for { } lt(i, length) { i := add(i, _4) }\n                            {\n                                mstore(add(pos, i), sload(dataPos))\n                                dataPos := add(dataPos, _3)\n                            }\n                            ret := add(pos, i)\n                        }\n                        finalize_allocation(memPtr, sub(ret, memPtr))\n                        let memPos := mload(64)\n                        return(memPos, sub(abi_encode_string(memPos, memPtr), memPos))\n                    }\n                    case 0xf851a440 { external_fun_admin() }\n                }\n                fun()\n                stop()\n            }\n            function array_storeLengthForEncoding_string(pos, length) -> updated_pos\n            {\n                mstore(pos, length)\n                updated_pos := add(pos, 0x20)\n            }\n            function array_dataslot_string_storage() -> data\n            {\n                mstore(0, /** @src 0:162:181  \"string public words\" */ 2)\n                /// @src 0:76:428  \"contract UUPSProxy {...\"\n                data := 29102676481673041902632991033461445430619272659676223336789171408008386403022\n            }\n            function panic_error_0x41()\n            {\n                mstore(0, shl(224, 0x4e487b71))\n                mstore(4, 0x41)\n                revert(0, 0x24)\n            }\n            function finalize_allocation(memPtr, size)\n            {\n                let newFreePtr := add(memPtr, and(add(size, 31), not(31)))\n                if or(gt(newFreePtr, 0xffffffffffffffff), lt(newFreePtr, memPtr)) { panic_error_0x41() }\n                mstore(64, newFreePtr)\n            }\n            function abi_encode_string(headStart, value0) -> tail\n            {\n                let _1 := 32\n                mstore(headStart, _1)\n                let length := mload(value0)\n                mstore(add(headStart, _1), length)\n                let i := 0\n                for { } lt(i, length) { i := add(i, _1) }\n                {\n                    mstore(add(add(headStart, i), 64), mload(add(add(value0, i), _1)))\n                }\n                if gt(i, length)\n                {\n                    mstore(add(add(headStart, length), 64), 0)\n                }\n                tail := add(add(headStart, and(add(length, 31), not(31))), 64)\n            }\n            function external_fun_admin()\n            {\n                if callvalue() { revert(0, 0) }\n                if slt(add(calldatasize(), not(3)), 0) { revert(0, 0) }\n                let value := and(sload(/** @src 0:136:156  \"address public admin\" */ 1), /** @src 0:76:428  \"contract UUPSProxy {...\" */ sub(shl(160, 1), 1))\n                let memPos := mload(64)\n                mstore(memPos, value)\n                return(memPos, 32)\n            }\n            /// @ast-id 36 @src 0:308:426  \"fallback() external payable {...\"\n            function fun()\n            {\n                /// @src 0:382:396  \"implementation\"\n                let _1 := 0x00\n                /// @src 0:76:428  \"contract UUPSProxy {...\"\n                let value := and(sload(/** @src 0:382:396  \"implementation\" */ _1), /** @src 0:76:428  \"contract UUPSProxy {...\" */ sub(shl(160, 1), 1))\n                /// @src 0:382:419  \"implementation.delegatecall(msg.data)\"\n                let _2 := /** @src 0:76:428  \"contract UUPSProxy {...\" */ mload(64)\n                calldatacopy(_2, /** @src 0:382:396  \"implementation\" */ _1, /** @src 0:410:418  \"msg.data\" */ calldatasize())\n                /// @src 0:76:428  \"contract UUPSProxy {...\"\n                let _3 := add(_2, /** @src 0:410:418  \"msg.data\" */ calldatasize())\n                /// @src 0:76:428  \"contract UUPSProxy {...\"\n                mstore(_3, /** @src 0:382:396  \"implementation\" */ _1)\n                /// @src 0:382:419  \"implementation.delegatecall(msg.data)\"\n                pop(delegatecall(gas(), value, _2, sub(/** @src 0:76:428  \"contract UUPSProxy {...\" */ _3, /** @src 0:382:419  \"implementation.delegatecall(msg.data)\" */ _2), /** @src 0:382:396  \"implementation\" */ _1, _1))\n                /// @src 0:76:428  \"contract UUPSProxy {...\"\n                switch returndatasize()\n                case 0 { }\n                default {\n                    let _4 := returndatasize()\n                    if gt(_4, 0xffffffffffffffff) { panic_error_0x41() }\n                    let memPtr := mload(64)\n                    finalize_allocation(memPtr, add(and(add(_4, 31), not(31)), 0x20))\n                    mstore(memPtr, _4)\n                    returndatacopy(add(memPtr, 0x20), /** @src 0:382:396  \"implementation\" */ _1, /** @src 0:76:428  \"contract UUPSProxy {...\" */ returndatasize())\n                }\n            }\n        }\n        data \".metadata\" hex\"a2646970667358221220515a7b2fa2d5594e2c6625c0e1c27bf1f9c51372a93132b60be6426530cae01c64736f6c634300080d0033\"\n    }\n}\n",
+        "hash": "01000059146f6ef312763c24d2148b2b331b6462b5f79c5f9474bea2702763a2",
+        "factoryDependencies": {}
+      }
+    }
+  },
+  "sources": {
+    "src/Proxy/UUPS/Proxy.sol": {
+      "id": 0,
+      "ast": {
+        "absolutePath": "src/Proxy/UUPS/Proxy.sol",
+        "exportedSymbols": {
+          "UUPSProxy": [
+            37
+          ]
+        },
+        "id": 38,
+        "license": "SEE LICENSE IN LICENSE",
+        "nodeType": "SourceUnit",
+        "nodes": [
+          {
+            "id": 1,
+            "literals": [
+              "solidity",
+              "0.8",
+              ".13"
+            ],
+            "nodeType": "PragmaDirective",
+            "src": "51:23:0"
+          },
+          {
+            "abstract": false,
+            "baseContracts": [],
+            "canonicalName": "UUPSProxy",
+            "contractDependencies": [],
+            "contractKind": "contract",
+            "fullyImplemented": true,
+            "id": 37,
+            "linearizedBaseContracts": [
+              37
+            ],
+            "name": "UUPSProxy",
+            "nameLocation": "85:9:0",
+            "nodeType": "ContractDefinition",
+            "nodes": [
+              {
+                "constant": false,
+                "functionSelector": "5c60da1b",
+                "id": 3,
+                "mutability": "mutable",
+                "name": "implementation",
+                "nameLocation": "116:14:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 37,
+                "src": "101:29:0",
+                "stateVariable": true,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 2,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "101:7:0",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "public"
+              },
+              {
+                "constant": false,
+                "functionSelector": "f851a440",
+                "id": 5,
+                "mutability": "mutable",
+                "name": "admin",
+                "nameLocation": "151:5:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 37,
+                "src": "136:20:0",
+                "stateVariable": true,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 4,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "136:7:0",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "public"
+              },
+              {
+                "constant": false,
+                "functionSelector": "f2c31bd9",
+                "id": 7,
+                "mutability": "mutable",
+                "name": "words",
+                "nameLocation": "176:5:0",
+                "nodeType": "VariableDeclaration",
+                "scope": 37,
+                "src": "162:19:0",
+                "stateVariable": true,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 6,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "162:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "public"
+              },
+              {
+                "body": {
+                  "id": 21,
+                  "nodeType": "Block",
+                  "src": "225:77:0",
+                  "statements": [
+                    {
+                      "expression": {
+                        "id": 14,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftHandSide": {
+                          "id": 12,
+                          "name": "implementation",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3,
+                          "src": "235:14:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "Assignment",
+                        "operator": "=",
+                        "rightHandSide": {
+                          "id": 13,
+                          "name": "_implementation",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 9,
+                          "src": "252:15:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "235:32:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "id": 15,
+                      "nodeType": "ExpressionStatement",
+                      "src": "235:32:0"
+                    },
+                    {
+                      "expression": {
+                        "id": 19,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftHandSide": {
+                          "id": 16,
+                          "name": "admin",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5,
+                          "src": "277:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "Assignment",
+                        "operator": "=",
+                        "rightHandSide": {
+                          "expression": {
+                            "id": 17,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": -15,
+                            "src": "285:3:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 18,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "src": "285:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "277:18:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "id": 20,
+                      "nodeType": "ExpressionStatement",
+                      "src": "277:18:0"
+                    }
+                  ]
+                },
+                "id": 22,
+                "implemented": true,
+                "kind": "constructor",
+                "modifiers": [],
+                "name": "",
+                "nameLocation": "-1:-1:-1",
+                "nodeType": "FunctionDefinition",
+                "parameters": {
+                  "id": 10,
+                  "nodeType": "ParameterList",
+                  "parameters": [
+                    {
+                      "constant": false,
+                      "id": 9,
+                      "mutability": "mutable",
+                      "name": "_implementation",
+                      "nameLocation": "208:15:0",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 22,
+                      "src": "200:23:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 8,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "200:7:0",
+                        "stateMutability": "nonpayable",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "src": "199:25:0"
+                },
+                "returnParameters": {
+                  "id": 11,
+                  "nodeType": "ParameterList",
+                  "parameters": [],
+                  "src": "225:0:0"
+                },
+                "scope": 37,
+                "src": "188:114:0",
+                "stateMutability": "nonpayable",
+                "virtual": false,
+                "visibility": "public"
+              },
+              {
+                "body": {
+                  "id": 35,
+                  "nodeType": "Block",
+                  "src": "336:90:0",
+                  "statements": [
+                    {
+                      "assignments": [
+                        26,
+                        28
+                      ],
+                      "declarations": [
+                        {
+                          "constant": false,
+                          "id": 26,
+                          "mutability": "mutable",
+                          "name": "success",
+                          "nameLocation": "352:7:0",
+                          "nodeType": "VariableDeclaration",
+                          "scope": 35,
+                          "src": "347:12:0",
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "typeName": {
+                            "id": 25,
+                            "name": "bool",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "347:4:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "visibility": "internal"
+                        },
+                        {
+                          "constant": false,
+                          "id": 28,
+                          "mutability": "mutable",
+                          "name": "data",
+                          "nameLocation": "374:4:0",
+                          "nodeType": "VariableDeclaration",
+                          "scope": 35,
+                          "src": "361:17:0",
+                          "stateVariable": false,
+                          "storageLocation": "memory",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes_memory_ptr",
+                            "typeString": "bytes"
+                          },
+                          "typeName": {
+                            "id": 27,
+                            "name": "bytes",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "361:5:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes_storage_ptr",
+                              "typeString": "bytes"
+                            }
+                          },
+                          "visibility": "internal"
+                        }
+                      ],
+                      "id": 34,
+                      "initialValue": {
+                        "arguments": [
+                          {
+                            "expression": {
+                              "id": 31,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": -15,
+                              "src": "410:3:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 32,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "data",
+                            "nodeType": "MemberAccess",
+                            "src": "410:8:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes_calldata_ptr",
+                              "typeString": "bytes calldata"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_bytes_calldata_ptr",
+                              "typeString": "bytes calldata"
+                            }
+                          ],
+                          "expression": {
+                            "id": 29,
+                            "name": "implementation",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3,
+                            "src": "382:14:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "id": 30,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "delegatecall",
+                          "nodeType": "MemberAccess",
+                          "src": "382:27:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_baredelegatecall_nonpayable$_t_bytes_memory_ptr_$returns$_t_bool_$_t_bytes_memory_ptr_$",
+                            "typeString": "function (bytes memory) returns (bool,bytes memory)"
+                          }
+                        },
+                        "id": 33,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "382:37:0",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_tuple$_t_bool_$_t_bytes_memory_ptr_$",
+                          "typeString": "tuple(bool,bytes memory)"
+                        }
+                      },
+                      "nodeType": "VariableDeclarationStatement",
+                      "src": "346:73:0"
+                    }
+                  ]
+                },
+                "id": 36,
+                "implemented": true,
+                "kind": "fallback",
+                "modifiers": [],
+                "name": "",
+                "nameLocation": "-1:-1:-1",
+                "nodeType": "FunctionDefinition",
+                "parameters": {
+                  "id": 23,
+                  "nodeType": "ParameterList",
+                  "parameters": [],
+                  "src": "316:2:0"
+                },
+                "returnParameters": {
+                  "id": 24,
+                  "nodeType": "ParameterList",
+                  "parameters": [],
+                  "src": "336:0:0"
+                },
+                "scope": 37,
+                "src": "308:118:0",
+                "stateMutability": "payable",
+                "virtual": false,
+                "visibility": "external"
+              }
+            ],
+            "scope": 38,
+            "src": "76:352:0",
+            "usedErrors": []
+          }
+        ],
+        "src": "51:378:0"
+      }
+    }
+  },
+  "errors": [
+    {
+      "component": "general",
+      "errorCode": "3628",
+      "formattedMessage": "Warning: This contract has a payable fallback function, but no receive ether function. Consider adding a receive ether function.\n --> src/Proxy/UUPS/Proxy.sol:4:1:\n  |\n4 | contract UUPSProxy {\n  | ^ (Relevant source part starts here and spans across multiple lines).\nNote: The payable fallback function is defined here.\n  --> src/Proxy/UUPS/Proxy.sol:14:5:\n   |\n14 |     fallback() external payable {\n   |     ^ (Relevant source part starts here and spans across multiple lines).\n\n",
+      "message": "This contract has a payable fallback function, but no receive ether function. Consider adding a receive ether function.",
+      "severity": "warning",
+      "sourceLocation": {
+        "file": "src/Proxy/UUPS/Proxy.sol",
+        "start": 76,
+        "end": 428
+      },
+      "type": "Warning"
+    },
+    {
+      "component": "general",
+      "errorCode": "2072",
+      "formattedMessage": "Warning: Unused local variable.\n  --> src/Proxy/UUPS/Proxy.sol:15:10:\n   |\n15 |         (bool success, bytes memory data) = implementation.delegatecall(msg.data);\n   |          ^^^^^^^^^^^^\n\n",
+      "message": "Unused local variable.",
+      "severity": "warning",
+      "sourceLocation": {
+        "file": "src/Proxy/UUPS/Proxy.sol",
+        "start": 347,
+        "end": 359
+      },
+      "type": "Warning"
+    },
+    {
+      "component": "general",
+      "errorCode": "2072",
+      "formattedMessage": "Warning: Unused local variable.\n  --> src/Proxy/UUPS/Proxy.sol:15:24:\n   |\n15 |         (bool success, bytes memory data) = implementation.delegatecall(msg.data);\n   |                        ^^^^^^^^^^^^^^^^^\n\n",
+      "message": "Unused local variable.",
+      "severity": "warning",
+      "sourceLocation": {
+        "file": "src/Proxy/UUPS/Proxy.sol",
+        "start": 361,
+        "end": 378
+      },
+      "type": "Warning"
+    }
+  ],
+  "version": "0.8.13",
+  "long_version": "0.8.13+commit.abaa5c0e.Darwin.appleclang",
+  "zk_version": "1.4.1"
+}
