@@ -77,7 +77,12 @@ forge test --mt test_functionName
   - [ ] uint-to-enum
 - [x] Weak Randomness
 - [ ] Missing Access Control
-- [ ] Proxy Attack
+- [x] Proxy Attack
+  - [x] Function Collision
+  - [x] Storage Collision
+  - [x] Uninitialized
+  - [x] metamorphic_rug
+  - [x] delegatecall_with_selfdestruct
 - [ ] msg.value in a Loop
 - [ ] Flashloan Attack
 - [ ] Lending&Borrow Attack
